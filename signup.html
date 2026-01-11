@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Accountable</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="logo-box"></div>
+        <h1 class="title">Create an Account</h1>
+        <p class="subtitle">Join the community</p>
+        <form id="signUpForm">
+            <div class="input-container">
+                <div class="input-icon-left">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </div>
+                <div class="input-content">
+                    <label>Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input-icon-left">
+                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                </div>
+                <div class="input-content">
+                    <label>Email Address</label>
+                    <input type="email" id="signUpEmail" required>
+                </div>
+            </div>
+            <div class="input-container">
+                 <div class="input-icon-left">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <div class="input-content">
+                    <label>Password</label>
+                    <input type="password" id="signUpPassword" required>
+                </div>
+            </div>
+            <button type="submit" class="continue-btn">Create Account</button>
+        </form>
+        <div id="signUpMessage"></div>
+        <p>Already have an account? <a href="/login.html">Sign In</a></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 messageDiv.textContent = data.message;
                 if (data.message === 'User created successfully') {
                     setTimeout(() => {
-                        window.location.href = '/sign-in.html';
+                        window.location.href = '/login.html';
                     }, 2000);
                 }
             })
