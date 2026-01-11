@@ -3,60 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Kenpact Discussion Board</title>
     <link rel="stylesheet" href="discussion-board.css">
 </head>
 <body>
-    <main class="container" style="display: flex; gap: 50px; padding: 50px 8%;">
-    
-    <aside class="sidebar">
-        <h3 class="filter-title">Skills</h3>
-        <div class="filter-box">
-            <input type="text" class="search-input" placeholder="Search for skills">
-            <label class="filter-item">
-                <input type="checkbox"> Leadership <span class="count">10</span>
-            </label>
-            <label class="filter-item">
-                <input type="checkbox"> Career Growth <span class="count">34</span>
-            </label>
-            <label class="filter-item">
-                <input type="checkbox" checked> Accounting <span class="count">39</span>
-            </label>
-            <a href="#" style="color: var(--accent-orange); font-size: 0.8rem; text-decoration: none; font-weight: bold;">Show more</a>
-        </div>
-    </aside>
 
-    <section class="mentors">
-        <div class="mentor-card">
-            <div class="card-content">
-                <img src="mentor1.jpg" class="mentor-img" alt="Shreville Awino">
-                <div class="mentor-details">
-                    <div style="display: flex; justify-content: space-between;">
-                        <h2>Shreville Awino</h2>
-                        <span style="font-size: 0.7rem; font-weight: bold;">⚡ Quick Responder</span>
-                    </div>
-                    <p>🎓 Senior Auditor at <strong>Spotify</strong></p>
-                    <p>🌐 Speaks <strong>English and Kiswahili</strong></p>
-                    <h4 style="margin: 15px 0 10px;">Global Project Manager Bridging Tech, Creativity & Cross-Cultural Collaboration</h4>
-                    <p style="font-size: 0.9rem; line-height: 1.5; color: #444;">Hi there! I'm a qualified auditor with a background in Financial accounting, where I focused a lot on book keeping, communication and collaboration.</p>
-                    
-                    <div class="tag-container">
-                        <span class="tag">Accounting</span>
-                        <span class="tag">Auditing</span>
-                        <span class="tag">Business Strategy</span>
-                        <span class="tag">Communication</span>
+    <header class="navbar">
+        <div class="logo-box"></div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#">About us</a>
+            <a href="#">Services <span class="arrow">▾</span></a>
+            <a href="event.html">Events</a>
+            <a href="#">Gallery</a>
+        </nav>
+        <div class="nav-actions">
+            <span class="sun-icon">☀️</span>
+            <button class="log-in-btn"> <a href="sign-in.html"> Log in</a> </button>
+            <a href="#" class="meet-mentors">Meet Mentors</a>
+        </div>
+    </header>
+
+    <div class="main-wrapper">
+        <aside class="sidebar">
+            <h2 class="category-title">Category</h2>
+            <ul class="category-list">
+                <li class="active">Accounting</li>
+                <li>Finance</li>
+                <li>Accounting</li>
+                <li>Finance</li>
+                <li>Accounting</li>
+                <li>Finance</li>
+                <li>Accounting</li>
+                <li>Finance</li>
+            </ul>
+            <button class="mentor-btn">Talk to a mentor</button>
+        </aside>
+
+        <main class="content-area">
+            <section class="discussion-card">
+                <div class="post-header">
+                    <span class="back-btn">←</span>
+                    <div class="user-meta">
+                        <div class="avatar-circle">
+                            <img src="user-icon.png" alt=""> </div>
+                        <div class="user-text">
+                            <span class="user-name">User1</span>
+                            <span class="post-time">10:45pm</span>
+                        </div>
                     </div>
                 </div>
+
+                <div class="image-placeholder-container">
+                    </div>
+
+                <div class="post-content">
+                    <h3>Should I pursue my ICAN/ACCA now, or gain more work experience first?</h3>
+                    <p class="lorem-text">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue.
+                    </p>
+                    <div class="main-stats">
+                        3.4K Likes <span class="heart">♡</span>
+                    </div>
+
+                    <div class="answer-box">
+                        <input type="text" placeholder="Add your answer">
+                    </div>
+
+                    <div class="comment-item">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.</p>
+                        <div class="comment-meta">
+                            <span>♡ 300 Likes</span>
+                            <span>🗨️ Reply</span>
+                        </div>
+                    </div>
+
+                    <div class="comment-item">
+                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.</p>
+                        <div class="comment-meta">
+                            <span>♡ 300 Likes</span>
+                            <span>🗨️ Reply</span>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="partner-logos">
+            <span>VAIO</span> <span>SHARP</span> <span>Microsoft</span> <span>SONY</span> <span>acer</span> <span>NOKIA</span> <span>ASUS</span> <span>CASIO</span>
+        </div>
+        <div class="footer-links">
+            <a href="#">Home</a> <a href="#">Events</a> <a href="#">Gallery</a> <a href="#">About us</a> <a href="#">Services</a> <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-programs">
+            <span>Mentorship Program</span> <span>Monthly Learning sessions</span> <span>Networking Summit</span> <span>Scholarship</span> <span>Community Forum</span>
+        </div>
+        <hr class="footer-divider">
+        <div class="footer-bottom">
+            <div class="address">
+                <strong>HQ:</strong> 45 Olufemi Street, Allen Avenue, Ikeja, Lagos, Nigeria
             </div>
-            <div class="card-price-bar">
-                <div class="price-box">
-                    <div style="font-size: 0.8rem; color: #aaa;">Starting from</div>
-                    <div class="amount">$100<span style="font-size: 1rem; font-weight: 400; color: #888;">/month</span></div>
+            <div class="contact">
+                <p><strong>Call us on:</strong> +234123456789</p>
+                <p><strong>Email:</strong> Accountablehourseries@gmail.com</p>
+            </div>
+            <div class="socials">
                 </div>
-                <button class="btn-profile">View Profile</button>
+        </div>
+        <div class="copyright-row">
+            <span>© 2025 Kenpact Solutions. All rights reserved.</span>
+            <div class="legal">
+                <span>FAQ</span> <span>Privacy and Policy</span>
             </div>
         </div>
-    </section>
-</main>
+    </footer>
+
 </body>
 </html>
