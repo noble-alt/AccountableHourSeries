@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 const PORT = 3000;
 
+// Serve static files from the root directory
+app.use(express.static('.'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 

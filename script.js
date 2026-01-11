@@ -15,7 +15,7 @@ document.getElementById('signUpForm').addEventListener('submit', function(event)
     const password = document.getElementById('signUpPassword').value;
     const messageDiv = document.getElementById('signUpMessage');
 
-    fetch('http://localhost:3000/signup', {
+    fetch('/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ document.getElementById('signInForm').addEventListener('submit', function(event)
     const password = document.getElementById('signInPassword').value;
     const messageDiv = document.getElementById('signInMessage');
 
-    fetch('http://localhost:3000/signin', {
+    fetch('/signin', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
