@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "fullName": "New User",
+      "email": "newuser@example.com",
+      "password": "$2b$10$Og4onN1HgckoReHJIDEl2.0FoEbjOFEyMStPSg2IZJRitaCz0kObi"
+    }
+  ]
+}
