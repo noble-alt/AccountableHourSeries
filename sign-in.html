@@ -4,43 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In Page</title>
-    <link rel="stylesheet" href="sign.css">
+    <link rel="stylesheet" href="sign-in.css">
 </head>
 <body>
-
     <div class="login-container">
-        <div class="logo-space"></div>
-
-        <h1 class="welcome-text">Welcome</h1>
-        <h2 class="sign-in-text">Sign in as:</h2>
-
-        <div class="role-badge">Mentee</div>
-
-        <div class="input-group">
-            <div class="icon-section">
-                <span class="email-icon">📩</span>
+        <h1 class="welcome-text">Welcome Back</h1>
+        <h2 class="sign-in-text">Sign in to continue</h2>
+        <form id="signInForm">
+            <div class="input-group">
+                <input type="email" id="signInEmail" placeholder="Email Address" required>
             </div>
-            <div class="text-section">
-                <label>Email Address</label>
-                <input type="email" value="Accountablehourseries@gmail.com" readonly>
+            <div class="input-group">
+                <input type="password" id="signInPassword" placeholder="Password" required>
             </div>
-            <div class="status-section">
-                <span class="check-icon">✔️</span>
-            </div>
-        </div>
-
-        <button class="continue-btn">Continue</button>
-
-        <div class="divider">
-            <span>Or Continue With</span>
-        </div>
-
-        <div class="social-icons">
-            <div class="icon google-icon">G</div>
-            <div class="icon facebook-icon">f</div>
-            <div class="icon apple-icon">🍎</div>
-        </div>
+            <button type="submit" class="continue-btn">Sign In</button>
+        </form>
+        <div id="signInMessage"></div>
+        <p>Don't have an account? <a href="/sign-up.html">Sign Up</a></p>
     </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
