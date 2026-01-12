@@ -1,0 +1,132 @@
+:root {
+    --bg-dark: #091c20;      /* Your requested background */
+    --cream-solid: #f5f5e9;  /* Opaque cream from mentor design */
+    --gold: #b87d4b;
+    --leather: #1a1a1a;     /* Dark leather color for cover */
+}
+
+body {
+    background-color: var(--bg-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    perspective: 2500px;
+    margin: 0;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.book-container {
+    width: 450px;
+    height: 600px;
+    position: relative;
+}
+
+.book {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 2px 10px 10px 2px;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.5);
+}
+
+/* FRONT COVER - High-end leather look */
+.front-cover {
+    background: var(--leather);
+    color: var(--cream-solid);
+    z-index: 3;
+    transform-origin: left;
+    transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-left: 15px solid #000; /* Thick book spine */
+}
+
+/* INNER PAGE - Solid Cream Paper */
+.inner-page {
+    background: var(--cream-solid);
+    color: #1a1a1a;
+    z-index: 2;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Subtle paper texture */
+    background-image: radial-gradient(#dcdcdc 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+}
+
+/* BACK COVER - Gives the book "thickness" */
+.back-cover {
+    background: var(--leather);
+    z-index: 1;
+    transform: translateZ(-5px); /* Offset slightly back */
+}
+
+/* OPENING ANIMATION */
+.book.is-open .front-cover {
+    transform: rotateY(-150deg); /* Swings open like a real hinge */
+}
+
+/* TYPOGRAPHY & BUTTONS */
+h1 { font-weight: 800; margin-bottom: 5px; }
+.front-cover h1 { color: var(--gold); }
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: rgba(255,255,255,0.8);
+}
+
+.front-cover input {
+    background: #2a2a2a;
+    border: 1px solid #444;
+    color: white;
+}
+
+.btn-gold {
+    background: var(--gold);
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.btn-dark {
+    background: var(--bg-dark);
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.toggle-btn {
+    text-align: center;
+    margin-top: 25px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-decoration: underline;
+}
