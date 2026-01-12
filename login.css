@@ -116,7 +116,7 @@ body::after {
   gap: 0;
   padding: 10px;
   border: none;
-  border-radius: 20px;
+  border-radius: 10%;
 }
 
 .access-btn :nth-child(2) {
@@ -125,6 +125,8 @@ body::after {
     opacity: 0.5;
     color: black;
     background-color: #b37a44;
+     gap: 0;
+     padding: 12px;
 }
 
 .access-btn {
