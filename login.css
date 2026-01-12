@@ -180,3 +180,33 @@ body::after {
 .social-icon.apple {
     filter: invert(1); /* Makes the logo white for dark mode */
 }
+
+/* Toggle Switch Styling */
+.toggle-container {
+    display: flex;
+    justify-content: center;
+    background-color: #0d1b1e; /* Dark background for the toggle */
+    border-radius: 25px; /* Fully rounded edges */
+    padding: 5px;
+    margin-bottom: 30px; /* Space it out from the form */
+    width: fit-content; /* Make the container only as wide as its content */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    border: none;
+    background: transparent; /* No background by default */
+    color: var(--text-muted); /* Muted color for the inactive state */
+    cursor: pointer;
+    border-radius: 20px; /* Rounded edges for the buttons */
+    font-size: 16px;
+    transition: all 0.3s ease; /* Smooth transition for color and background */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.toggle-btn.active {
+    background-color: var(--accent-copper); /* Copper background for the active state */
+    color: var(--text-white); /* White text for the active state */
+}
