@@ -9,6 +9,9 @@ const app = express();
 app.use(cors());
 const PORT = 3000;
 
+// Serve static files from the root directory
+app.use(express.static('.'));
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -16,11 +19,18 @@ app.post('/signup', (req, res) => {
     const { fullName, email, password } = req.body;
 
     fs.readFile('db.json', 'utf8', (err, data) => {
-        if (err) {
+        if (err && err.code !== 'ENOENT') { // Ignore file not found, but handle other errors
             return res.status(500).json({ message: 'Error reading from database' });
         }
 
-        const db = JSON.parse(data);
+        let db;
+        try {
+            // If the file is empty or doesn't exist, start with an empty user list
+            db = data ? JSON.parse(data) : { users: [] };
+        } catch (parseErr) {
+            return res.status(500).json({ message: 'Error parsing database data.' });
+        }
+
         const userExists = db.users.some(user => user.email === email);
 
         if (userExists) {
@@ -48,11 +58,21 @@ app.post('/signin', (req, res) => {
     const { username, password } = req.body;
 
     fs.readFile('db.json', 'utf8', (err, data) => {
-        if (err) {
+        if (err && err.code !== 'ENOENT') {
             return res.status(500).json({ message: 'Error reading from database' });
         }
 
-        const db = JSON.parse(data);
+        if (err && err.code === 'ENOENT') {
+            return res.status(401).json({ message: 'Invalid credentials' });
+        }
+
+        let db;
+        try {
+            db = JSON.parse(data);
+        } catch (parseErr) {
+            return res.status(500).json({ message: 'Error parsing database data.' });
+        }
+
         const user = db.users.find(user => user.email === username);
 
         if (user) {
