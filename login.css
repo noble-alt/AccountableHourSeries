@@ -1,214 +1,70 @@
-/* Color Palette from Image */
 :root {
-    --bg-color: #0d1b1e;      /* Deep dark teal */
-    --accent-copper: #b37a44; /* Button/Border copper color */
-    --text-white: #f5f5f5;
-    --text-muted: #828e8f;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --dark-teal: #091c20;
+    --gold: #b87d4b;
+    --cream: #f5f5e9;
+    --leather: #121212;
 }
 
 body {
-    background: linear-gradient(45deg, #1a2a2d, #0d1b1e 70%);
+    background-color: var(--dark-teal);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: var(--text-white);
-    overflow: hidden; /* Hide overflow from decorative elements */
+    perspective: 2500px;
+}
+
+.book-container { width: 450px; height: 600px; }
+
+.book {
+    width: 100%; height: 100%;
     position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
 }
 
-/* Decorative background elements */
-body::before,
-body::after {
-    content: '';
+.page {
     position: absolute;
-    border-radius: 50%;
-    z-index: -1;
-    opacity: 0.15;
+    width: 100%; height: 100%;
+    padding: 50px;
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    border-radius: 2px 12px 12px 2px;
+    box-shadow: 15px 15px 40px rgba(0,0,0,0.7);
 }
 
-body::before {
-    width: 300px;
-    height: 300px;
-    background: linear-gradient(45deg, var(--accent-copper), #5e3b1e);
-    top: -50px;
-    left: -100px;
+.cover {
+    background: var(--leather);
+    color: var(--cream);
+    z-index: 2;
+    transform-origin: left;
+    transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border-left: 10px solid #000;
 }
 
-body::after {
-    width: 200px;
-    height: 200px;
-    background: linear-gradient(45deg, #1d4249, #0d1b1e);
-    bottom: -80px;
-    right: -50px;
-}
-
-.auth-container {
-    width: 100%;
-    max-width: 450px; /* Increased width slightly for better padding */
-    text-align: center;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.logo-box {
-    width: 180px;
-    height: 50px;
-    background-color: #ffffff;
-    margin: 0 auto 60px;
-}
-
-.title {
-    font-size: 48px;
-    font-weight: 600;
-    margin-bottom: 20px;
-}
-
-.subtitle {
-    font-size: 32px;
-    font-weight: 500;
-    margin-bottom: 40px;
-}
-
-.role-selector {
-    display: inline-block;
-    padding: 10px 40px;
-    border: 1.5px solid #2a3a3d;
-    border-radius: 12px;
-    font-size: 16px;
-    margin-bottom: 50px;
-    color: var(--text-white);
-}
-
-/* Input Area Styling */
-.input-container {
-    display: flex;
-    align-items: center;
-    border: 1.5px solid var(--accent-copper);
-    border-radius: 15px;
-    padding: 12px 20px;
-    margin-bottom: 25px;
-    background: transparent;
-}
-
-.input-icon-left {
-    padding-right: 15px;
-    border-right: 1px solid #2a3a3d;
-    display: flex;
-    align-items: center;
-}
-
-.access-btn button {
-  border-radius: 10%;
-  position: relative;
-  display: flex;
-  gap: 0;
-  padding: 10px;
-  border: none;
-  border-radius: 10%;
-}
-
-.access-btn :nth-child(2) {
-    border-radius: 10%;
+.inner-page {
+    background: var(--cream);
+    color: var(--dark-teal);
     z-index: 1;
-    opacity: 0.5;
-    color: black;
-    background-color: #b37a44;
-     gap: 0;
-     padding: 12px;
 }
 
-.access-btn {
-background: #1d4249;
-display: flex;
-justify-content: center;
-margin: 0 30% 10% 30%;
-border: none;
-padding: 10px;
-border-radius: 30px;
+/* Flip Action */
+.book.open .cover { transform: rotateY(-160deg); }
 
-}
+.gold-text { color: var(--gold); font-family: 'Plus Jakarta Sans', sans-serif; }
+.logo-lux { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
 
-.input-content {
-    flex-grow: 1;
-    text-align: left;
-    padding-left: 15px;
-}
-
-.input-content label {
-    display: block;
-    font-size: 14px;
-    color: var(--text-muted);
-}
-
-.input-content input {
-    background: transparent;
-    border: none;
-    color: var(--text-white);
-    font-size: 14px;
+input {
     width: 100%;
-    outline: none;
-    margin-top: 4px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 
-/* Continue Button */
-.continue-btn {
-    width: 100%;
-    background-color: var(--accent-copper);
-    color: white;
-    border: none;
-    padding: 18px;
-    border-radius: 15px;
-    font-size: 18px;
-    font-weight: 500;
-    cursor: pointer;
-    margin-bottom: 40px;
-}
+.btn-gold { background: var(--gold); color: white; border: none; width: 100%; padding: 15px; font-weight: bold; cursor: pointer; }
+.btn-dark { background: var(--dark-teal); color: white; border: none; width: 100%; padding: 15px; font-weight: bold; cursor: pointer; }
 
-/* Divider Styling */
-.divider {
-    display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.line {
-    flex: 1;
-    height: 1px;
-    background-color: #2a3a3d;
-}
-
-.divider-text {
-    padding: 0 15px;
-    font-size: 14px;
-    color: var(--text-white);
-}
-
-/* Social Icons */
-.social-group {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.social-icon {
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-}
-
-.social-icon.apple {
-    filter: invert(1); /* Makes the logo white for dark mode */
-}
-
+.toggle-link { cursor: pointer; text-align: center; margin-top: 20px; font-size: 0.85rem; }
+.toggle-link span { text-decoration: underline; font-weight: bold; color: var(--gold); }
