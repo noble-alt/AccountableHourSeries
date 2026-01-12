@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Liber Login</title>
+    <link rel="stylesheet" href="sign-in.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="book-container">
+    <div class="book" id="book">
+
+        <div class="page back-cover"></div>
+
+        <div class="page inner-page">
+            <div class="page-pattern"></div>
+            <h1>Join the Elite</h1>
+            <p>Start your journey with Kenpact Solutions</p>
+            <form>
+                <input type="text" placeholder="Full Name">
+                <input type="email" placeholder="Email Address">
+                <input type="password" placeholder="Set Password">
+                <button type="button" class="btn-dark">Sign Up</button>
+            </form>
+            <div class="toggle-btn" onclick="closeBook()">← Back to Login</div>
+        </div>
+
+        <div class="page front-cover" id="cover">
+            <div class="spine-glow"></div>
+            <div class="content">
+                <div class="icon-gold">⚜</div>
+                <h1>Accountable Hour Series</h1>
+                <p>Mentorship Portal</p>
+                <form>
+                    <input type="text" placeholder="Username">
+                    <input type="password" placeholder="Password">
+                    <button type="button" class="btn-gold">Sign In</button>
+                </form>
+                <div class="toggle-btn" onclick="openBook()">Create Account →</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <script>
+        function openBook() {
+    document.getElementById('book').classList.add('is-open');
+}
+
+function closeBook() {
+    document.getElementById('book').classList.remove('is-open');
+}
+    </script>
+</body>
+</html>

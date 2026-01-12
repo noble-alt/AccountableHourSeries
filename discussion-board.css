@@ -1,121 +1,147 @@
-/* General Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #071619; color: #fff; }
-
-a {
-  text-decoration: none;
-  color: inherit;
+:root {
+    --bg-dark: #081416;
+    --card-cream: #f5f5e9;
+    --footer-cream: #ececd6;
+    --accent-orange: #b87d4b;
+    --text-dark: #1a1a1a;
+    --text-muted: #666;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
-}
-/* Navbar */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 22px 60px;
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
+body {
+    background-color: var(--bg-dark);
+    font-family: 'Inter', sans-serif;
+    color: white;
+    margin: 0;
 }
 
-.logo {
-  width: 120px;
-  height: 30px;
-  background: #cfc9c9;
+/* --- SIDEBAR FILTERS --- */
+.sidebar {
+    width: 280px;
 }
 
-.navbar nav a {
-  font-size: 14px;
-  font-weight: 500;
-  color: #eef1dc;
-  letter-spacing: 0.2px;
-  position: relative;
-  padding-bottom: 4px;
-  transition: color 0.25s ease;
+.filter-title {
+    color: var(--accent-orange);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.2rem;
+    margin: 30px 0 15px;
 }
 
-.nav-actions {
-  display: flex;
-  gap: 14px;
+.filter-box {
+    background: var(--card-cream);
+    padding: 20px;
+    border-radius: 12px;
+    color: var(--text-dark);
 }
 
-.navbar nav {
-    display: flex;
-    align-items: center;
-    gap: 100px;
-}
-.btn-outline {
-  border: 1px solid #cfcfcf;
-  background: #eef1dc;
-  padding: 8px 20px;
-  border-radius: 20px;
-}
-
-.btn-solid {
-  background: #091c20;
-  color: #fff;
-  padding: 8px 20px;
-  border-radius: 20px;
-  border: none;
-  box-shadow: 0 0 15px rgba(238, 241, 220, 0.4);
-}
-
-/* Main Layout */
-.main-wrapper { display: flex; padding: 40px 60px; gap: 50px; }
-
-/* Sidebar */
-.sidebar { width: 220px; }
-.category-title { font-size: 32px; margin-bottom: 30px; color: #fff; }
-.category-list { list-style: none; margin-bottom: 30px; }
-.category-list li { padding: 12px 15px; margin-bottom: 5px; cursor: pointer; color: #ccc; border-radius: 8px; }
-.category-list li.active { background-color: #1a2b2e; color: #fff; }
-.mentor-btn { background-color: #b87333; color: white; border: none; padding: 12px; width: 100%; border-radius: 8px; cursor: pointer; }
-
-/* Discussion Card */
-.content-area { flex: 1; }
-.discussion-card { background-color: #0d1f22; border-radius: 12px; padding: 30px; }
-.post-header { display: flex; align-items: center; gap: 15px; margin-bottom: 20px; }
-.back-btn { font-size: 24px; cursor: pointer; }
-.user-meta { display: flex; align-items: center; gap: 10px; }
-.avatar-circle { width: 40px; height: 40px; background: #fff; border-radius: 50%; }
-.user-text span { display: block; font-size: 12px; }
-.user-name { font-weight: bold; }
-
-/* Image Placeholder (As requested) */
-.image-placeholder-container {
+.search-input {
     width: 100%;
-    height: 300px; /* Adjust based on your image aspect ratio */
-    background-color: #1a2b2e; /* Darker background to act as a frame */
-    border-radius: 15px;
-    margin-bottom: 25px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+/* Corrected Checkbox Alignment */
+.filter-item {
+    display: flex;
+    align-items: center; /* Vertically center checkbox with text */
+    margin-bottom: 10px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.filter-item input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #999;
+    border-radius: 3px;
+    margin-right: 10px;
+    flex-shrink: 0; /* Prevents shrinking on long text */
+    cursor: pointer;
+    background: white;
+}
+
+.filter-item input:checked {
+    background-color: var(--accent-orange);
+    border-color: var(--accent-orange);
+}
+
+.filter-item .count {
+    margin-left: auto; /* Pushes number to the right */
+    color: var(--text-muted);
+}
+
+/* --- MENTOR CARDS --- */
+.mentor-card {
+    background: var(--card-cream);
+    border-radius: 0 0 15px 15px; /* Bottom rounded for the footer transition */
+    color: var(--text-dark);
+    margin-bottom: 40px;
     overflow: hidden;
 }
 
-.post-content h3 { font-size: 20px; margin-bottom: 15px; font-weight: 500; }
-.lorem-text { font-size: 14px; line-height: 1.6; color: #b0b0b0; margin-bottom: 15px; }
-.main-stats { text-align: right; color: #b0b0b0; font-size: 14px; margin-bottom: 20px; }
-
-.answer-box input {
-    width: 100%;
-    padding: 18px;
-    background: #071619;
-    border: 1px solid #1a2b2e;
-    border-radius: 10px;
-    color: #fff;
-    margin-bottom: 30px;
+.card-content {
+    display: flex;
+    padding: 30px;
+    gap: 25px;
 }
 
-.comment-item { border-bottom: none; margin-bottom: 25px; }
-.comment-item p { font-size: 13px; color: #b0b0b0; line-height: 1.5; margin-bottom: 8px; }
-.comment-meta { display: flex; justify-content: flex-end; gap: 20px; font-size: 12px; color: #b0b0b0; }
+.mentor-img {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 4px;
+}
 
-/* Footer */
-.site-footer { background-color: #f4f4dc; color: #333; padding: 40px 60px; font-size: 13px; }
-.partner-logos { display: flex; justify-content: space-between; font-weight: bold; opacity: 0.4; margin-bottom: 30px; font-size: 18px; }
-.footer-links, .footer-programs { display: flex; justify-content: center; gap: 30px; margin-bottom: 15px; }
-.footer-links a { color: #333; text-decoration: none; }
-.footer-divider { border: 0.5px solid #ddd; margin: 20px 0; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: flex-start; }
-.copyright-row { display: flex; justify-content: space-between; margin-top: 30px; opacity: 0.7; }
+.mentor-details h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.tag-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tag {
+    background: white;
+    border: 1px solid #eee;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* Pricing Footer Bar */
+.card-price-bar {
+    background: #0d1f22;
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-box .amount {
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.btn-profile {
+    background: var(--accent-orange);
+    color: white;
+    border: none;
+    padding: 12px 50px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
