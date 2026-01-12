@@ -9,6 +9,11 @@
       "fullName": "abdulazeez idris",
       "email": "abdulazeez040@gmail.com",
       "password": "$2b$10$EweW2QF4aH2Nv3pj/7xQpO6/uD3LRezeMavW8ulG.OkkuLctBtD12"
+    },
+    {
+      "fullName": "Test User",
+      "email": "testuser@example.com",
+      "password": "$2b$10$TS6GwnQcLFcgzZXnaUC/MuhWPDJ8gxEIcLIWAOJDDczh5c9.CfQJK"
     }
   ]
 }
