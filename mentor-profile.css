@@ -1,0 +1,191 @@
+:root {
+    --bg-dark: #121212;
+    --bg-grey: #6b6661;
+    --card-bg: #b0a9a2;
+    --text-main: #ffffff;
+    --text-muted: #e0e0e0;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Section */
+.profile-header {
+    background-color: var(--bg-grey);
+    color: var(--text-main);
+    padding: 60px 0;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.bio-info p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.meta-list {
+    list-style: none;
+    padding: 0;
+    font-size: 13px;
+}
+
+.meta-list li {
+    margin-bottom: 8px;
+}
+
+.skills-section h3 {
+    margin-top: 0;
+    font-family: serif;
+}
+
+.skills-cloud span {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    margin: 0 5px 10px 0;
+}
+
+.more-link {
+    text-decoration: underline;
+    cursor: pointer;
+    background: none !important;
+}
+
+/* Mentors Section */
+.mentors-section {
+    padding: 50px 0;
+}
+
+.mentors-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.mentor-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-top {
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    flex-grow: 1;
+}
+
+.avatar-placeholder {
+    width: 140px;
+    height: 140px;
+    background: white;
+    flex-shrink: 0;
+}
+
+.mentor-details h3 {
+    margin: 0;
+    font-size: 22px;
+    font-family: serif;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.role, .lang {
+    font-size: 12px;
+    margin: 5px 0;
+}
+
+.headline {
+    font-weight: bold;
+    font-size: 13px;
+    margin: 15px 0 10px 0;
+}
+
+.description {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #444;
+}
+
+.tags {
+    margin-top: 15px;
+}
+
+.tags span {
+    display: inline-block;
+    background: #fff;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 10px;
+    font-weight: bold;
+    margin: 0 4px 6px 0;
+}
+
+/* Footer Section of Card */
+.card-footer {
+    background-color: var(--bg-dark);
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.pricing small {
+    display: block;
+    font-size: 10px;
+    color: #bbb;
+}
+
+.price {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.price span {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.view-btn {
+    background: transparent;
+    border: 1px solid white;
+    color: white;
+    padding: 10px 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
