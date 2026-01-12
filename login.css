@@ -1,70 +1,161 @@
-:root {
-    --dark-teal: #091c20;
-    --gold: #b87d4b;
-    --cream: #f5f5e9;
-    --leather: #121212;
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    background-color: var(--dark-teal);
+    background-color: #0d1b1e; /* Match Frame 1000002769 */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    perspective: 2500px;
+    color: #f5f5f5;
 }
 
-.book-container { width: 450px; height: 600px; }
-
-.book {
-    width: 100%; height: 100%;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s;
-}
-
-.page {
-    position: absolute;
-    width: 100%; height: 100%;
-    padding: 50px;
-    box-sizing: border-box;
-    backface-visibility: hidden;
-    border-radius: 2px 12px 12px 2px;
-    box-shadow: 15px 15px 40px rgba(0,0,0,0.7);
-}
-
-.cover {
-    background: var(--leather);
-    color: var(--cream);
-    z-index: 2;
-    transform-origin: left;
-    transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-    border-left: 10px solid #000;
-}
-
-.inner-page {
-    background: var(--cream);
-    color: var(--dark-teal);
-    z-index: 1;
-}
-
-/* Flip Action */
-.book.open .cover { transform: rotateY(-160deg); }
-
-.gold-text { color: var(--gold); font-family: 'Plus Jakarta Sans', sans-serif; }
-.logo-lux { font-size: 3rem; color: var(--gold); margin-bottom: 20px; }
-
-input {
+.container {
     width: 100%;
-    padding: 15px;
-    margin-bottom: 15px;
-    background: rgba(255,255,255,0.9);
-    border: 1px solid rgba(0,0,0,0.1);
-    border-radius: 8px;
+    max-width: 400px;
+    text-align: center;
+    padding: 20px;
 }
 
-.btn-gold { background: var(--gold); color: white; border: none; width: 100%; padding: 15px; font-weight: bold; cursor: pointer; }
-.btn-dark { background: var(--dark-teal); color: white; border: none; width: 100%; padding: 15px; font-weight: bold; cursor: pointer; }
+.logo-area {
+    width: 150px;
+    height: 40px;
+    background-color: #172629;
+    margin: 0 auto 50px;
+    border-radius: 4px;
+}
 
-.toggle-link { cursor: pointer; text-align: center; margin-top: 20px; font-size: 0.85rem; }
-.toggle-link span { text-decoration: underline; font-weight: bold; color: var(--gold); }
+.welcome-text {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+/* Toggle Switch */
+.auth-toggle {
+    display: flex;
+    background-color: #122124;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    color: #828e8f;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.toggle-btn.active {
+    background-color: #2d3e42;
+    color: #ffffff;
+}
+
+.no-account-text {
+    font-size: 13px;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+/* Form Styling */
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #b37a44; /* Copper accent from Frame 1000002770 */
+    border-radius: 12px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    background-color: transparent;
+}
+
+.icon-section {
+    padding-right: 15px;
+    border-right: 1px solid #2d3e42;
+    color: #ffffff;
+    font-size: 18px;
+}
+
+.field-section {
+    flex: 1;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.field-section label {
+    display: block;
+    font-size: 11px;
+    color: #828e8f;
+    margin-bottom: 2px;
+}
+
+.field-section input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+}
+
+.status-section {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.continue-btn {
+    width: 100%;
+    background-color: #b37a44; /* Button copper color */
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 16px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+/* Footer elements */
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.line {
+    flex: 1;
+    height: 1px;
+    background-color: #2d3e42;
+}
+
+.divider-text {
+    padding: 0 15px;
+    font-size: 14px;
+    color: #d1d1d1;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.social-links img {
+    width: 24px;
+    cursor: pointer;
+}
+
+.apple-logo {
+    filter: invert(1); /* Makes Apple logo white */
+}
