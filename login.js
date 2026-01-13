@@ -8,6 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('signUpEmail').value;
             const password = document.getElementById('signUpPassword').value;
             const messageDiv = document.getElementById('signUpMessage');
+            const loader = document.getElementById('signupLoader');
+
+            // Show loader and hide form
+            loader.style.display = 'block';
+            signUpForm.style.display = 'none';
+            messageDiv.textContent = '';
+
 
             fetch('/signup', {
                 method: 'POST',
@@ -18,6 +25,10 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(data => {
+                // Hide loader and show form
+                loader.style.display = 'none';
+                signUpForm.style.display = 'block';
+
                 messageDiv.textContent = data.message;
                 if (data.message === 'User created successfully') {
                     setTimeout(() => {
@@ -26,6 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .catch(error => {
+                // Hide loader and show form
+                loader.style.display = 'none';
+                signUpForm.style.display = 'block';
+
                 messageDiv.textContent = 'Error: ' + error;
             });
         });

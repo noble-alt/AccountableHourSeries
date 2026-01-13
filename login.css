@@ -210,3 +210,41 @@ body::after {
     background-color: var(--accent-copper); /* Copper background for the active state */
     color: var(--text-white); /* White text for the active state */
 }
+
+/* Custom Loader Styles */
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--accent-copper);
+    border-radius: 50%;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    position: relative;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+    display: none; /* Hidden by default */
+}
+
+.loader::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 50%;
+    height: 2px;
+    background: var(--text-white);
+    transform-origin: left;
+    animation: sweep 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes sweep {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(0deg); }
+}
