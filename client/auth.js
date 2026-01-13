@@ -38,26 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
     continueBtn.addEventListener('click', () => {
         const isSignUp = signupBtn.classList.contains('active');
         const form = isSignUp ? signupForm : signinForm;
-        const endpoint = isSignUp ? '/signup' : '/signin';
+        const endpoint = isSignUp ? '/signup' : '/login';
 
-        const inputs = form.querySelectorAll('input');
-        const data = {};
-        inputs.forEach(input => {
-            data[input.name] = input.value;
-        });
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData.entries());
 
-        // Basic validation
-        if (isSignUp) {
-            if (!data.fullname || !data.email || !data.password) {
-                alert('Please fill in all fields for sign up.');
-                return;
-            }
-        } else {
-            if (!data.email || !data.password) {
-                alert('Please fill in all fields for sign in.');
-                return;
-            }
-        }
+        // Basic validation is now handled by the 'required' attribute in HTML.
+        // You could add more complex validation here if needed.
 
         fetch(endpoint, {
             method: 'POST',
