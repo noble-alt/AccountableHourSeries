@@ -12,16 +12,16 @@ html {
 }
 
 :root {
-  --bg-primary: #FFFFFF;
+  --bg-primary: #eef1dc;
   --text-primary: #091c20;
-  --bg-secondary: #F0F0F0;
+  --bg-secondary: #FFFFFF;
   --text-secondary: #333333;
   --accent-color: #b4793d;
-  --card-bg: #e2dddd;
+  --card-bg: #FFFFFF;
   --card-text: #091c20;
   --btn-solid-bg: #091c20;
   --btn-solid-text: #FFFFFF;
-  --btn-outline-bg: #FFFFFF;
+  --btn-outline-bg: transparent;
   --btn-outline-text: #091c20;
   --btn-outline-border: #091c20;
   --navbar-shadow: rgba(0, 0, 0, 0.1);
