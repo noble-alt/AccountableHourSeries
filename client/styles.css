@@ -230,7 +230,7 @@ footer {
 }
 
 .offer-card {
-  background: var(--card-bg);
+  background: #eef1dc;
   padding: 25px; /* Standard even padding */
   font-weight: 600;
   color: var(--card-text); /* Darker color so text is readable */
