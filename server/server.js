@@ -27,35 +27,35 @@ async function saveUsers(users) {
 }
 
 app.post('/signup', async (req, res) => {
-    const { username, password } = req.body;
+    const { fullname, email, password } = req.body;
 
-    if (!username || !password) {
-        return res.status(400).json({ message: 'Username and password are required' });
+    if (!fullname || !email || !password) {
+        return res.status(400).json({ message: 'Fullname, email and password are required' });
     }
 
     const db = await getUsers();
 
-    const existingUser = db.users.find(user => user.username === username);
+    const existingUser = db.users.find(user => user.email === email);
     if (existingUser) {
-        return res.status(409).json({ message: 'Username already exists' });
+        return res.status(409).json({ message: 'Email already exists' });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
-    db.users.push({ username, password: hashedPassword });
+    db.users.push({ fullname, email, password: hashedPassword });
     await saveUsers(db);
 
     res.status(201).json({ message: 'User created successfully' });
 });
 
 app.post('/login', async (req, res) => {
-    const { username, password } = req.body;
+    const { email, password } = req.body;
 
-    if (!username || !password) {
-        return res.status(400).json({ message: 'Username and password are required' });
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Email and password are required' });
     }
 
     const db = await getUsers();
-    const user = db.users.find(user => user.username === username);
+    const user = db.users.find(user => user.email === email);
 
     if (!user) {
         return res.status(401).json({ message: 'Invalid credentials' });
