@@ -130,12 +130,15 @@ footer {
     align-items: center;
     gap: 100px;
 }
-.btn-outline {
-  border: 1px solid var(--btn-outline-border);
-  background: var(--btn-outline-bg);
-  color: var(--btn-outline-text);
+.btn-accent {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--text-primary);
   padding: 8px 20px;
   border-radius: 20px;
+  text-decoration: none;
+  border: none;
+  font-weight: 500;
 }
 
 .btn-solid {
