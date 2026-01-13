@@ -1,0 +1,140 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #0d1b1e; /* Dark background from image */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f5f5f5; /* Light text color */
+}
+
+/* Main authentication container */
+.auth-container {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    padding: 20px;
+}
+
+.welcome-title {
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+/* Toggle Switch Styling */
+.auth-toggle {
+    display: flex;
+    background-color: #122124; /* Darker background for the toggle bar */
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow: hidden; /* Ensures the inner buttons conform to the border radius */
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    color: #828e8f; /* Inactive button color */
+    cursor: pointer;
+    border-radius: 8px; /* Slightly rounded corners for the active state */
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-btn.active {
+    background-color: #2d3e42; /* Active button background */
+    color: #ffffff;
+}
+
+.form-helper-text {
+    font-size: 13px;
+    color: #e0e0e0;
+    margin-bottom: 40px;
+}
+
+/* Form & Input Styling */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.auth-form.hidden {
+    display: none; /* Hide the inactive form */
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1.5px solid #b37a44; /* Copper/gold border from image */
+    border-radius: 12px;
+    padding: 12px 18px;
+    background-color: transparent;
+}
+
+.input-group .icon {
+    font-size: 20px;
+    padding-right: 15px;
+    border-right: 1px solid #2d3e42; /* Divider line */
+    color: #ffffff;
+}
+
+.input-field {
+    flex: 1;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.input-field label {
+    display: block;
+    font-size: 11px;
+    color: #828e8f;
+    margin-bottom: 3px;
+}
+
+.input-field input {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    width: 100%;
+    outline: none;
+    font-size: 14px;
+}
+
+.input-field input::placeholder {
+    color: #555; /* Placeholder text color */
+}
+
+.status-icon {
+    color: #4CAF50; /* Green checkmark */
+    font-size: 20px;
+}
+
+/* Continue Button */
+.continue-btn {
+    width: 100%;
+    background-color: #b37a44; /* Copper/gold button color */
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.continue-btn:hover {
+    background-color: #c98c5a; /* Slightly lighter on hover */
+}
