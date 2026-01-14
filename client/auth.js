@@ -53,12 +53,15 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             body: JSON.stringify(data),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                return response.json().then(err => { throw new Error(err.message) });
+            }
+            return response.json();
+        })
         .then(result => {
             console.log('Success:', result);
-            // Here you would typically handle the response, e.g., redirecting the user
-            // or showing a success/error message.
-            alert('Action was successful! (Check console for details)');
+            window.location.href = 'index.html'; // Redirect to homepage on success
         })
         .catch(error => {
             console.error('Error:', error);
