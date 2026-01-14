@@ -230,18 +230,13 @@ footer {
 }
 
 .offer-card {
-  position: relative;
-  padding: 25px;
+  background: #e2dddd;
+  padding: 25px; /* Standard even padding */
   font-weight: 600;
-  color: #FFFFFF; /* Text color on overlay */
+  color: #091c20; /* Darker color so text is readable */
   display: flex;
   flex-direction: column;
-  min-height: 300px;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* To keep the overlay within the card */
-  z-index: 1;
+  min-height: 300px; 
 }
 
 .offer-card::before {
@@ -261,11 +256,11 @@ footer {
 }
 
 .offer-card button {
-  margin-top: auto; /* This pushes the button to the bottom */
-  align-self: flex-end; /* Optional: aligns button to the left */
+  margin-top: auto; 
+  align-self: flex-end; 
   padding: 10px 20px;
-  background: var(--accent-color);
-  color: var(--btn-solid-text);
+  background: #b4793d;
+  color: #eef1dc;
   border: none;
   cursor: pointer;
   width: fit-content;
@@ -314,7 +309,7 @@ footer {
   height: 250px;
  padding: 30px;
   border-radius: 16px;
-  outline: 1px solid var(--text-secondary);
+  outline: 1px solid #d9d9d9;
   outline-offset: 20px; 
 }
 
@@ -323,7 +318,7 @@ footer {
   height: 380px;
   padding: 30px;
   border-radius: 16px;
-  outline: 1px solid var(--text-secondary);
+  outline: 1px solid #d9d9d9;
   outline-offset: 15px; 
   margin: 0 80px;
 }
@@ -365,11 +360,11 @@ footer {
   right: 50%;
   width: 90%;
   height: 180px;
-  background-color: var(--bg-secondary);
+  background-color: #f3eeee;
   transform: translateY(-50%);
   z-index: 2;
-  border: 5px solid var(--bg-primary);
-  border-left: 5px solid var(--bg-primary);
+  border: 5px solid white;
+  border-left: 5px solid white;
 }
 
 /* individual cards */
@@ -450,7 +445,7 @@ footer {
 }
 
 .join-card {
-  background: var(--bg-secondary);
+  background: #f4efef;
   border-radius: 22px;
   padding: 40px;
   display: flex;
@@ -465,22 +460,22 @@ footer {
 .join-text h2 {
   font-size: 36px;
   margin-bottom: 16px;
-  color: var(--text-primary);
+  color: black;
 }
 
 .join-text p {
   max-width: 1000px;
-  color: var(--text-secondary);
+  color: black;
   font-size: 14px;
 }
 
 .join-btn {
-  border: 2px solid var(--text-primary);
+  border: 2px solid #000;
   background: transparent;
   padding: 5px 10px;
   font-size: 14px;
-  background-color: var(--accent-color);
-  color: var(--btn-solid-text);
+  background-color: #b4793d;
+  color: black;
   font-size: 11px;
 }
 
